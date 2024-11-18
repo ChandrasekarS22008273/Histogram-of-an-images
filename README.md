@@ -41,6 +41,8 @@ hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
 
 equalized_image = cv2.equalizeHist(gray_image)
 
+hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
+
 plt.figure(figsize=(10, 7))
 
 plt.subplot(2, 2, 1)
@@ -61,7 +63,6 @@ plt.xlim([0, 256])
 
 
 plt.subplot(2, 2, 4)
-hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
 plt.plot(hist_equalized, color='black')
 plt.title('Equalized Histogram')
 plt.xlim([0, 256])
